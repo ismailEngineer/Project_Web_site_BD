@@ -1,22 +1,34 @@
+<<?php 
+        session_start();
+        $_SESSION['test'] = 42;
+ ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" media="all" type="text/css" href="style.css" />
-    <title>Design #71</title>
+    <link rel="stylesheet" media="screen" type="text/css" href="style.css" />
+    <title>Acceuil</title>
 </head>
 <body>
     <div class="site">
         <div class="header">
-	        <span><img src="logo1.jpg" alt="Logo" /></span>
-
+	        <span><img src="logo1.jpg" alt="Logo"/></span>
         </div>
         <div class="clean"></div>
         <div class="content">
             <div class="menu_v">
             <div class="menu_v_top">Menu</div>
             <div class="menu_v_ctn">
-               <a href="bibliotheque.php">Bibliothéque</a> <br />              <a href="livre.php">Livres</a><br />                <a href="services.php">Services</a><br />                <a href="contact.php">Contact</a> <br />    <a href="seconnecter.php">Se connecter</a>  <br />  <a href="inscrire.php">s'inscrire</a>           </div>
+                <a href="index.php">Acceuil</a><br />
+               <a href="bibliotheque.php">Bibliothéque</a> <br/>
+               <a href="livre.php">Livres</a><br/>                
+               <a href="services.php">Services</a><br/>                
+               <a href="contact.php">Contact</a><br/> 
+               <!-- <a href="supprimer.php">supprimer</a><br /> -->   
+               <a href="seconnecter.php">Se connecter</a> <br/>  
+               <a href="inscrire.php">s'inscrire</a>           
+           </div>
 
             <div class="menu_v_top">Liens utiles</div>
             <div class="menu_v_ctn">
@@ -26,13 +38,8 @@
 				                <h1>Description</h1>
 
                 <div class="paragraphe">
-                    ce site est un rassemblement de toutes les bibliothèques de la France, il permet aux étudiants à gérer en temps réel leur emprunts et la disponibilitée des livres auprès de chez eux.
-                   <!-- <h2>Sous-Titre</h2>
-                    <div class="paragraphe">
-	                    Novo denique perniciosoque exemplo idem Gallus ausus est inire flagitium grave, quod Romae cum ultimo dedecore temptasse aliquando dicitur Gallienus, et adhibitis paucis clam ferro succinctis vesperi per tabernas palabatur et conpita quaeritando Graeco sermone, cuius erat inpendio gnarus, quid de Caesare quisque sentiret.
-                    </div>
-                    Aenean lacinia, enim vel auctor lacinia, velit nulla tristique mauris, id sodales magna metus elementum sem. Duis metus. Nulla turpis diam, vestibulum et, luctus a, mollis in, mauris. Morbi vitae arcu. Fusce tincidunt lorem et massa. Morbi elit. Nullam condimentum ullamcorper turpis. Praesent sed nibh. Duis a ante iaculis mi posuere tincidunt. 
-                </div>!-->
+                    ce site est un rassemblement de toutes les bibliothèques de la France, il permet aux étudiants de gérer en temps réel leur emprunts et la disponibilitée des livres auprès de chez eux.
+                </div>
                 <h1>Listes</h1>
 
                 <div class="paragraphe">
