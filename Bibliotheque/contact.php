@@ -12,7 +12,11 @@
 
         </div>
         
-
+        <div class="content">
+            <div class="content_ctn">
+                <h1>Contact</h1>
+            </div>
+        </div>
         <div class="foot">
             <span>
                                 <a href="http://validator.w3.org/check?uri=referer">Valide (X)html strict 1.0</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">Valide Css 2.1</a> | <a href="http://www.supportduweb.com/">Design par SupportduWeb.com</a>

@@ -23,9 +23,9 @@
             <div class="content_ctn">
                 <?php
                     include('acces_base_entrep_etudiant.php');
-                 
-                    $mail = $_POST['contact_etudiant'];
-                    $mot_de_passe = $_POST['password'];
+                    session_start();
+                    $mail = $_SESSION['contact_etudiant'];
+                    $mot_de_passe = $_SESSION['password'];
                     $reponse = $bdd->query("SELECT * FROM `etudiants` WHERE `contact_etudiant` LIKE '$mail'");
                     //if ($reponse->aille() ?)
                     if ($donnees = $reponse->fetch())
@@ -36,9 +36,12 @@
                         //echo 'ttttttttt';
                         if ($mot_de_passe == $donnees['password']) 
                         {
-                            echo '<h1>Bienvenue</h1>';
-                            // $id_client = $donnees['id_etudiant'];
-                            // header('location:index.php');
+                            
+                            $_SESSION['id_etudiant'] = $donnees['id_etudiant'];
+                            $_SESSION['nom'] = $donnees['nom'];
+
+                            
+                             header('location:index.php');
                         }
                         else 
                         {
@@ -69,5 +72,5 @@
 
     </div>
 </body>
-</html>        
+</html>    
                    

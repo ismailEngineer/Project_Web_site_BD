@@ -15,19 +15,27 @@
             <div class="menu_v">
             <div class="menu_v_top">Menu</div>
             <div class="menu_v_ctn">
-                <a href="index.php">Acceuil</a><br />
+               <a href="index.php">Acceuil</a><br />
                <a href="bibliotheque.php">Bibliothéque</a> <br/>
                <a href="livre.php">Livres</a><br/>                
                <a href="services.php">Services</a><br/>                
                <a href="contact.php">Contact</a><br/> 
-               <a href="supprimer.php">supprimer</a><br />   
                <a href="seconnecter.php">Se connecter</a> <br/>  
-               <a href="inscrire.php">s'inscrire</a>           
-           </div>
-
-            <div class="menu_v_top">Liens utiles</div>
-            <div class="menu_v_ctn">
-                <a href="http://www.supportduweb.com/">Support du web</a><br />                <a href="http://www.supportduweb.com/kits-graphiques-designs-gratuits-template-html-css-valide-web-design.html">Kits graphiques/Designs</a>            </div>
+               <a href="inscrire.php">s'inscrire</a>  <br/>
+               <?php 
+                        session_start();
+                        if ($_SESSION['id_etudiant']) 
+                            {  $nom = $_SESSION['nom'];
+                                if ($nom == "admin")
+                                {
+                                    echo '<a href="ajout_bibliotheque.php">ajouter une bibliotheque</a><br />';
+                                    echo '<a href="supprimer.php">supprimer</a><br />';
+                                    echo '<a href="modifier.php">modifier</a><br />';
+                                }
+                            
+                            }
+                 ?>      
+            </div>
             </div>
             <div class="content_ctn">
                 <h1> Supprimer un étudiant</h1>
@@ -38,7 +46,7 @@
                 include('acces_base_entrep_etudiant.php');
             
                 
-                $reponse = $bdd->query('SELECT * FROM `etudiants`');
+                $reponse = $bdd->query('SELECT * FROM `etudiants`ORDER BY `id_etudiant` ASC');
                 
               
                 echo '<table border=1>';
@@ -49,7 +57,7 @@
                 while ($donnees = $reponse->fetch())
                 {   
                   $i = $i+1;
-                    echo '</td> <td>'.$donnees['nom'].'</td> <td>'.$donnees['prenom'].' </td><td>'.$donnees['institut'].' </td><td>'.$donnees['specialite'].' </td><td>'.'<form name="FormAjout" action="extd_supprim.php" method="post"><input type="checkbox" name="case" value='.$donnees['id_etudiant'].'></td></tr>';
+                    echo '</td> <td>'.$donnees['nom'].'</td> <td>'.$donnees['prenom'].' </td><td>'.$donnees['institut'].' </td><td>'.$donnees['specialite'].' </td><td>'.'<form name="FormAjout" action="extd_supprim.php" method="post">'.'<input type="checkbox" name="maListe[]" value="'.$donnees['id_etudiant'].'"/>'.$donnees['id_etudiant'].'</td></tr>';
                 }
                 
               

@@ -21,6 +21,15 @@ a:hover
 .site
 {
 }
+.header_left
+{
+    height:114px;
+	width:1028px;
+	margin:auto;
+	padding-top:30px;
+	margin-left:200px;
+}
+}
 .header
 {
 	height:114px;

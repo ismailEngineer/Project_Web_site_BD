@@ -1,11 +1,3 @@
-<<?php 
-    session_start();
-    $a = $_GET['test'];
-    echo $a;
-  ?>
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,32 +15,45 @@
             <div class="menu_v_top">Menu</div>
             <div class="menu_v_ctn">
               <a href="index.php">Acceuil</a><br />
-               <a href="bibliotheque.php">Bibliothéque</a> <br />              
-               <a href="livre.php">Livres</a><br />                
-               <a href="services.php">Services</a><br />                
-               <a href="contact.php">Contact</a> <br />
-               <a href="supprimer.php">supprimer</a><br />    
-               <a href="seconnecter.php">Se connecter</a>  <br />  
-               <a href="inscrire.php">s'inscrire</a>           </div>
-
-            <div class="menu_v_top">Liens utiles</div>
-            <div class="menu_v_ctn">
-                <a href="http://www.supportduweb.com/">Support du web</a><br />                <a href="http://www.supportduweb.com/kits-graphiques-designs-gratuits-template-html-css-valide-web-design.html">Kits graphiques/Designs</a>            </div>
+               <a href="bibliotheque.php">Bibliothéque</a> <br/>
+               <a href="livre.php">Livres</a><br/>                
+               <a href="services.php">Services</a><br/>                
+               <a href="contact.php">Contact</a><br/> 
+               <a href="seconnecter.php">Se connecter</a> <br/>  
+               <a href="inscrire.php">s'inscrire</a>  <br/>
+               <?php 
+                        session_start();
+                        if ($_SESSION['id_etudiant']) 
+                            {  $nom = $_SESSION['nom'];
+                                if ($nom == "admin")
+                                {
+                                    echo '<a href="ajout_bibliotheque.php">ajouter une bibliotheque</a><br />';
+                                    echo '<a href="supprimer.php">supprimer</a><br />';
+                                    echo '<a href="modifier.php">modifier</a><br />';
+                                }
+                            
+                            }
+                 ?>           </div>
             </div>
             <div class="content_ctn">
-                <form name="FormAjout" action="verification_connexion.php" method="post">
+                <form name="FormAjout" action="extd_mux.php" method="post">
                     <table border=0>
                           <tr>
                             <td> Email </td>
-                            <td> <input type="text" name ="contact_etudiant" size=20> </td>
+                            <td> <input type="text" name ="contact_etudiant" size=20></td>
                           </tr>
                           <tr>
                               <td> Password </td>
                               <td> <input type="password" name="password" value="" /></td>
                           </tr>
                           <tr>
+              
+                              <td><input type="submit"  name='mot' value="mot de pasee oublié ?"></td> 
+                
+                          </tr>
+                          <tr>
                           <td colspan=2> 
-                              <input type="submit"  value="valider"></td>
+                              <input type="submit"  name='valider' value="valider" onclick="verification_connexion.php"></td>
                           </tr>
                     </table>
                 </form>

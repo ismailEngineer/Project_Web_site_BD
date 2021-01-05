@@ -16,13 +16,25 @@
             <div class="menu_v_top">Menu</div>
             <div class="menu_v_ctn">
                <a href="index.php">Acceuil</a><br />
-               <a href="bibliotheque.php">Bibliothéque</a> <br />              
-               <a href="livre.php">Livres</a><br />                
-               <a href="services.php">Services</a><br />                
-               <a href="contact.php">Contact</a> <br />
-               <a href="supprimer.php">supprimer</a><br />    
-               <a href="seconnecter.php">Se connecter</a>  <br />  
-               <a href="inscrire.php">s'inscrire</a>           </div>
+               <a href="bibliotheque.php">Bibliothéque</a> <br/>
+               <a href="livre.php">Livres</a><br/>                
+               <a href="services.php">Services</a><br/>                
+               <a href="contact.php">Contact</a><br/> 
+               <a href="seconnecter.php">Se connecter</a> <br/>  
+               <a href="inscrire.php">s'inscrire</a>  <br/>
+               <?php 
+                        session_start();
+                        if ($_SESSION['id_etudiant']) 
+                            {  $nom = $_SESSION['nom'];
+                                if ($nom == "admin")
+                                {
+                                    echo '<a href="ajout_bibliotheque.php">ajouter une bibliotheque</a><br />';
+                                    echo '<a href="supprimer.php">supprimer</a><br />';
+                                    echo '<a href="modifier.php">modifier</a><br />';
+                                }
+                            
+                            }
+                 ?>           </div>
 
             <div class="menu_v_top">Liens utiles</div>
             <div class="menu_v_ctn">

@@ -1,8 +1,3 @@
-<<?php 
-        session_start();
-        $_SESSION['test'] = 42;
- ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,27 +9,63 @@
     <div class="site">
         <div class="header">
 	        <span><img src="logo1.jpg" alt="Logo"/></span>
+            <form action = "verif_form.php" method = "get">
+                <h3 align="center"/><input  type = "search" name = "terme" size="30"> 
+                <input  type = "submit" name = "s" value = "Rechercher"></h3>
+            </form>
         </div>
         <div class="clean"></div>
         <div class="content">
             <div class="menu_v">
             <div class="menu_v_top">Menu</div>
-            <div class="menu_v_ctn">
-                <a href="index.php">Acceuil</a><br />
+            <div class="menu_v_ctn">  
+                
+               <a href="index.php">Acceuil</a><br />
                <a href="bibliotheque.php">Bibliothéque</a> <br/>
                <a href="livre.php">Livres</a><br/>                
                <a href="services.php">Services</a><br/>                
                <a href="contact.php">Contact</a><br/> 
-               <!-- <a href="supprimer.php">supprimer</a><br /> -->   
                <a href="seconnecter.php">Se connecter</a> <br/>  
-               <a href="inscrire.php">s'inscrire</a>           
+               <a href="inscrire.php">s'inscrire</a>  <br/>
+               <?php 
+                        session_start();
+                        if ($_SESSION['id_etudiant']) 
+                            {  $nom = $_SESSION['nom'];
+                                if ($nom == "admin")
+                                {
+                                    echo '<a href="ajout_bibliotheque.php">ajouter une bibliotheque</a><br />';
+                                    echo '<a href="supprimer.php">supprimer</a><br />';
+                                    echo '<a href="modifier.php">modifier</a><br />';
+                                }
+                                else
+                                {
+                                    echo '<a href="profil.php">Profil</a><br/>';
+
+                                }
+                            
+                            }
+                 ?>
+                  
+                        
            </div>
 
-            <div class="menu_v_top">Liens utiles</div>
-            <div class="menu_v_ctn">
-                <a href="http://www.supportduweb.com/">Support du web</a><br />                <a href="http://www.supportduweb.com/kits-graphiques-designs-gratuits-template-html-css-valide-web-design.html">Kits graphiques/Designs</a>            </div>
+        
+            
             </div>
             <div class="content_ctn">
+                    <?php 
+                        
+                        if (!$_SESSION['id_etudiant']) 
+                            {
+                              $_SESSION['id_etudiant'] = 0;
+                              $_SESSION['nom'] = 0;
+                            } else {
+                                $id_etudiant = $_SESSION['id_etudiant'];
+                                $nom = $_SESSION['nom'];
+                                echo '<h1>Bienvenue '.$nom.'</h1>';
+                            }
+            
+                ?>
 				                <h1>Description</h1>
 
                 <div class="paragraphe">

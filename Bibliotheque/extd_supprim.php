@@ -21,13 +21,35 @@
         // else
         // {echo"Vous n'avez pas coché la case";
         // }
-         $ASupprimer = isset($_POST['case']) ? $_POST['case'] : '';
-         echo '<h2>Le salarie dont NSS vaut : '.$ASupprimer.' a ete supprime.</h2>';
-         $bdd->exec("
-               DELETE
-               FROM `etudiants`
-               WHERE `id_etudiant`= $ASupprimer
-               ");
+
+         // $ASupprimer = isset($_POST['case']) ? $_POST['case'] : '';
+         // echo '<h2>Le salarie dont NSS vaut : '.$ASupprimer.' a ete supprime.</h2>';
+         // $bdd->exec("
+         //       DELETE
+         //       FROM `etudiants`
+         //       WHERE `id_etudiant`= $ASupprimer
+         //       ");
+            $liste = isset($_POST['maListe']) ? $_POST['maListe'] : 'z';
+            //echo $liste;
+            if ($liste!='z')
+            {
+                for($i=0;$i<sizeof($liste);$i++)
+                    {   
+                        $ASupprimer = $liste[$i];
+                        echo '<p>L etudiant dont id vaut : '.$ASupprimer.' a ete supprime.</p>';
+                        //echo '<br/>';
+                        $bdd->exec("
+                            DELETE
+                            FROM `etudiants`
+                            WHERE `id_etudiant`= $ASupprimer
+                                    ");
+                    }
+            }
+            else
+            {
+                echo '<p> Rien à supprimer <p>';
+            }
+            
     
                         
 
