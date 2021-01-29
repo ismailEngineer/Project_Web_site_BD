@@ -55,7 +55,7 @@
                       </tr>
                       <tr>
                           <td> date de naissance </td>
-                          <td> <input type="date" name ="date"> </td>
+                          <td> <input type="date" name ="datee"> </td>
                       </tr>
                       <tr>
                           <td> institut </td>
@@ -67,7 +67,7 @@
                       </tr>
                       <tr>
                           <td> Adresse mail </td>
-                          <td> <input type="Adresse mail" value="" /></td>
+                          <td> <input type="text" value="" /></td>
                       </tr>
                       <tr>
                           <td> Confirmation Adresse mail</td>
@@ -76,7 +76,13 @@
                       <tr>
                           <td> Password </td>
                           <td> <input type="password" name="password" value="" /></td>
-                      </tr>              
+                      </tr>
+                      <tr>
+                          <td> Question de sécurité : votre couleur préférer? </td>
+                      </tr>
+                      <tr>
+                          <td> <input type="text" name="reponse_question" value="" /></td>
+                      </tr>             
                       <tr>
                           <td colspan=2> 
                               <input type="submit"  value="S'inscrire"></td>

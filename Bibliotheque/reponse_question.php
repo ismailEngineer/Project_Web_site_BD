@@ -44,7 +44,16 @@
             <div class="content_ctn">
                 
                 <h2>Réinitialisation du mot de passe</h2>
-                <form name="FormAjout" action="extd_modif_password.php" method="post">
+                <?php 
+                  
+                  include('acces_base_entrep_etudiant.php');
+                  $variable = $_SESSION['contact_etudiant'];
+                  $reponse = $bdd->query("SELECT * FROM `etudiants` WHERE `contact_etudiant` LIKE '$variable'");
+                  $donnees = $reponse->fetch();
+            
+                  if ($donnees['reponse_question']==$_POST['reponse_question'])
+                    {
+                      echo '<form name="FormAjout" action="extd_modif_password.php" method="post">
                     <table border=0>
                       <tr>
                           <td> Password </td>
@@ -54,7 +63,12 @@
                               <input type="submit"  value="Modifier"></td>
                       </tr>
                     </table>
-                </form>
+                </form>';
+                    }
+                  else {
+                    echo '<h3>Votre reponse à la question de securise faux !! Merci de contacter l administration dans l ongle contact </h3>';
+                  }
+                 ?>
             </div>
             </div>
         </div>

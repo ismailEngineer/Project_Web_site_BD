@@ -1,0 +1,109 @@
+body {
+background-color:#FFFFF0;
+background-image: url('acores.jpg');
+background-repeat:no-repeat;
+background-position:right center;
+margin:5px 5px 5px 5px;
+}
+h1 {
+font-family:comic sans ms, sans-serif;
+font-size:200%;
+color:navy;
+background-color:transparent;
+text-align:left;
+}
+h2 {
+font-family:comic sans ms, sans-serif;
+font-size:160%;
+color:navy;
+background-color:transparent;
+text-align:left;
+}
+h3 {
+font-family:comic sans ms, sans-serif;
+font-size:92%;
+color:navy;
+background-color:transparent;
+text-align:left;
+}
+p {
+font-family:comic sans ms, sans-serif;
+font-size:80%;
+color:black;
+background-color:transparent;
+text-align:left;
+margin-left:0px;
+margin-right:0px;
+}
+li {
+font-family:comic sans ms, sans-serif;
+font-size:80%;
+color:black;
+background-color:transparent;
+text-align:left;
+margin-left:0px;
+margin-right:0px;
+}
+a:link {
+font-family:comic sans ms, sans-serif;
+font-size:80%;
+color:#1E90FF;
+background-color:transparent;
+text-decoration:underline;
+}
+a:visited {
+font-family:comic sans ms, sans-serif;
+font-size:80%;
+color:#FF6699;
+background-color:transparent;
+text-decoration:none;
+}
+a:hover {
+font-family:comic sans ms, sans-serif;
+font-size:80%;
+color:#8020D0;
+background-color:transparent;
+text-decoration:none;
+}
+
+div {
+	text-align:center;
+	}
+div#bandeau {
+	width:600px;
+	height:100px;
+	background-color:#00CCFF;
+	}
+div#menu {
+	float:left;
+	width:100px;
+	height:400px;
+	background-color:#AAAAAA;
+	}
+div#menu_haut {
+  
+
+	width:100px;
+	height:200px;
+	background-color:#66CC33;
+	}
+div#menu_bas {
+  padding:0px;
+ 
+	width:100px;
+	height:200px;
+	background-color:#CC99CC;
+	}
+div#contenu {
+	float:left;
+	width:500px;
+	
+	background-color:#FFCC00;
+	}
+
+div#pied_page {
+	clear:both;
+	width:600px;
+	height:50px;
+	background-color:#33FF99;
+	}
